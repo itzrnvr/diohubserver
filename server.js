@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const PORT = process.env.PORT || 3030;
 
 app.use(express.json({extended: true, limit: '1mb'}))
 app.use(express.urlencoded({ extended: true }));
@@ -40,11 +41,11 @@ app.post('/order', (req, res) => {
     user.orders.push(order)
 
     // resend json data
-    res.status(200).json({ phone, email })
+    res.status(200).json(order)
 })
 
 app.get('/', (req, res)=> {
     res.send(JSON.stringify(user))
 })
 
-app.listen(3000)
+app.listen(PORT)
