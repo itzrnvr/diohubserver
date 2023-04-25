@@ -21,7 +21,7 @@ app.post('/login', (req, res) => {
     user.password = password
 
     // resend json data
-    res.status(200).json({ phone, email })
+    res.status(200).json({ phone, password })
 })
 
 // api endpoint
