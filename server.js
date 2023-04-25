@@ -14,11 +14,11 @@ const user = {
 
 // api endpoint
 app.post('/login', (req, res) => {
-    const { phone, email } = req.body
+    const { phone, password } = req.body
     console.log(req.body)
 
     user.phone = phone
-    user.password = email
+    user.password = password
 
     // resend json data
     res.status(200).json({ phone, email })
